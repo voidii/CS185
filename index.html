@@ -19,32 +19,63 @@ html,body{
 .footer, .push {
   height: 50px;
 }
+ul {
+  list-style-type: none;
+  font-family: cursive;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(243, 199, 163);
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: rgb(77, 73, 59);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+h2 {
+    font-family: cursive;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
 </style>
-<title>CS180 Web Page</title> 
-</head>
+
 <body>
-	
     <div class="wrapper" style="background-color:bisque;">
             <!-- content -->
         <div id="container" style="width:100%; height:100%;background-color:#FFA400"></div>
 
-        <div id="header" style="background-color:#FFA500;">
-            <h1 style="margin-bottom:0;">CS180 Web Page</h1>
+        <div id="header" style="background-color:rgb(243, 199, 163);">
+            <h2 style="margin-bottom:0;">CS180 Web Page</h2>
         </div>
-
-        <div id="menu" style="background-color:#FFD700;height:100%;width:25%;float:right;">
-            <b>What We Learned</b><br>
-                HTML<br>
-                CSS<br>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
+            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
+            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
+        </ul>
+        <div id="content" style="background-color:bisque;height:100%;width:25%;float:right;font-family:cursive;">
+            <b>A Little About Me</b>
+            <br>
+                <br>
+                I am a Physics and Computer Science student.<br>
+                I love playing League of Legend, Monster Hounter World, Overwatch, PUBG, WarcraftIII and a lot of others, too much to list<br>
+                I also like boxing, basketball and working out. I am not just some nerds. I am the king of nerds.<br>
         </div>
 
         <div id="content" style="background-color:#EEEEEE;height:100%;width:75%;float:center;">
-            <b>SHOOT</b><br>
             <img src="Image.jpg" width="100%" alt="image" />
-                <div class="push"></div>
         </div>
     </div>
-<div id="footer" style="background-color:#FFA500;clear:both;text-align:left;">
+<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
     By Frank Zhang 
 </div>
 <div></div>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head> 
+<meta charset="utf-8"> 
+<style>
+p.serif{font-family:"Times New Roman",Times,serif;}
+p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+html,body{
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+}
+.wrapper {
+  min-height: 100%;  
+  margin-bottom: -50px; /* 等于footer的高度 */
+}
+.footer, .push {
+  height: 50px;
+}
+ul {
+  list-style-type: none;
+  font-family: cursive;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(243, 199, 163);
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: rgb(77, 73, 59);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+h2 {
+    font-family: cursive;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+#container{
+  display: grid;
+  padding: 50px;
+  grid-row-gap: 50px;
+  font-size: 30px;
+  grid-template-columns: 0.25fr 1fr; 
+  grid-auto-flow: row dense;
+}
+
+.item {
+  text-align: center;
+
+}
+
+.item-1 {
+
+  grid-column-start: 1;
+  grid-column-end: 3;  
+}
+
+.item-2 {
+
+}
+
+.item-3 {
+}
+
+.item-4 {
+
+}
+
+.item-5 {
+
+}
+
+.item-6 {
+
+}
+
+.item-7 {
+
+}
+
+.item-8 {
+
+}
+
+.item-9 {
+
+}
+</style>
+
+<body>
+    <div class="wrapper" style="background-color:bisque;">
+            <!-- content -->
+        <div style="width:100%; height:100%;background-color:#FFA400"></div>
+
+        <div id="header" style="background-color:rgb(243, 199, 163);">
+            <h2 style="margin-bottom:0;"><img src= "MHW.png" width="4%">My Monster Hunter World</h2>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
+            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
+            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
+        </ul>
+        <div id="container">
+            <div class="item item-1" style="background-color:bisque;font-family:cursive;">
+                <b>A Little About The Monsters In The Hunter World</b>
+            </div>
+            <div class="item item-2">
+                <a herf = "https://monsterhunterworld.gamepedia.com/File:MHW_Ancient_Leshen_Icon.png">
+                    <img src= "M1.png" width = "60%">
+                </a>
+            </div>
+            <div class="item item-3" style="background-color:bisque;font-family:cursive;">
+                <b>Ancient Leshen</b>
+                <br>
+                <br>
+                One of the hardest monster for starters. I personally have not even countered it yet. 
+                <br>
+                I wish one day I can get it. 
+            </div>
+            <div class="item item-4">
+                <a herf = "https://monsterhunterworld.gamepedia.com/File:MHW_Anjanath_Icon.png">
+                    <img src= "M2.png" width = "60%">
+                </a>
+            </div>
+            <div class="item item-5" style="background-color:bisque;font-family:cursive;">
+                <b>Anjanath</b>
+                <br>
+                <br>
+                A monster that most people would encounter in very early game, and most people quit the game because of this one. I didn't. I curshed it. 
+            </div>
+            <div class="item item-6">
+                <a herf = "https://monsterhunterworld.gamepedia.com/File:MHW_Azure_Rathalos_Icon.png">
+                    <img src= "M3.png" width = "60%">
+                </a>
+            </div>
+            <div class="item item-7" style="background-color:bisque;font-family:cursive;">
+                <b>Azure Rathalos</b>
+                <br>
+                <br>
+                The king of the sky, strongest Rathalos players will encounter before Iceborn. Really hard to take down with melee weapons. One of the reason why we always have at least one bow weapon. 
+            </div>
+            <div class="item item-8"><a herf = "https://monsterhunterworld.gamepedia.com/File:MHW_Xeno%27jiiva_Icon.png">
+                <img src= "M6.png" width = "60%">
+            </a></div>
+            <div class="item item-9" style="background-color:bisque;font-family:cursive;">
+                <b>Xeno'jiiva</b>
+                <br>
+                <br>
+                The strongest creature player will ever encounter before Iceborn, the final boss. The body of it is so huge that any other monster would look like an ant infront of it. Most players kill it with help from others. 
+            </div>
+          </div>
+    </div>
+<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
+    By Frank Zhang 
+</div>
+<div></div>
+</body>
+</html>

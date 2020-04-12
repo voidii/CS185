@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+<head> 
+<meta charset="utf-8"> 
+<style>
+p.serif{font-family:"Times New Roman",Times,serif;}
+p.sansserif{font-family:Arial,Helvetica,sans-serif;}
+html,body{
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+}
+.wrapper {
+  min-height: 100%;  
+  margin-bottom: -50px; /* 等于footer的高度 */
+}
+.footer, .push {
+  height: 50px;
+}
+ul {
+  list-style-type: none;
+  font-family: cursive;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(243, 199, 163);
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: rgb(77, 73, 59);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+h2 {
+    font-family: cursive;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+#container{
+  display: grid;
+  padding: 50px;
+  grid-row-gap: 50px;
+  font-size: 30px;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 315px 315px 315px; 
+  grid-auto-flow: row dense;
+}
+
+.item {
+  text-align: center;
+
+}
+
+.item-1 {
+
+  grid-column-start: 1;
+  grid-column-end: 3;  
+}
+
+.item-2 {
+  grid-column-start: 1;
+  grid-column-end: 3;  
+}
+
+.item-3 {
+}
+
+.item-4 {
+
+}
+
+.item-5 {
+
+}
+
+.item-6 {
+
+}
+
+.item-7 {
+
+}
+
+.item-8 {
+
+}
+
+.item-9 {
+
+}
+</style>
+
+<body>
+    <div class="wrapper" style="background-color:bisque;">
+            <!-- content -->
+        <div style="width:100%; height:100%;background-color:#FFA400"></div>
+
+        <div id="header" style="background-color:rgb(243, 199, 163);">
+            <h2 style="margin-bottom:0;"><img src= "League of legends.png" width="4%">My League of Legend</h2>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
+            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
+            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
+        </ul>
+        <div id="container">
+            <div class="item item-1" style="background-color:bisque;font-family:cursive;" >
+                    <b>A Little About Me In League of Legend</b>
+                    <br>
+                        <br>
+                        I am a main supp player, but I can carry in other positions too.<br>
+                        I engjoy playing supp because I think it is fun to cc bunch of enemys and my teamates follow up, like in the video<br>
+                        I am the Rakan in the video.<br>
+                        I recorded the video because I think the scene is beautiful lol.<br>
+            </div>
+            <div class="item item-2" style="background-color:bisque;font-family:cursive;">
+                <b>A Little About My Favorite Player: The Shy</b>
+                <br>
+                    <br>
+                    He is the top laner from IG.<br>
+                    He is the first world champion from LPL.<br>
+                    He is known to be the best player without a doubt nowadays.<br>
+                    Here is a video about him~<br>
+            </div>
+            <div class="item item-3"><iframe width="560" height="315" src="https://www.youtube.com/embed/e9V65_mAarw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="item item-4"><iframe width="560" height="315" src="https://www.youtube.com/embed/Y1GvvnmAHJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            
+        </div>
+    </div>
+<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
+    By Frank Zhang 
+</div>
+<div></div>
+</body>
+</html>

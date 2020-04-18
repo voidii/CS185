@@ -16,9 +16,6 @@ html,body{
   min-height: 100%;  
   margin-bottom: -50px; /* 等于footer的高度 */
 }
-.footer, .push {
-  height: 50px;
-}
 ul {
   list-style-type: none;
   font-family: cursive;
@@ -41,6 +38,10 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+#league #menu .league {
+    background-color: bisque;
+    color: white;
+}
 h2 {
     font-family: cursive;
     font-size: 30px;
@@ -52,17 +53,15 @@ h2 {
   grid-row-gap: 50px;
   font-size: 30px;
   grid-template-columns: 33.3% 33.3% 33.3%;
-  grid-template-rows: 315px 315px 315px; 
+  grid-template-rows: 50% 50% 0%; 
   grid-auto-flow: row dense;
 }
 
 .item {
   text-align: center;
-
 }
 
 .item-1 {
-
   grid-column-start: 1;
   grid-column-end: 3;  
 }
@@ -73,6 +72,10 @@ h2 {
 }
 
 .item-3 {
+  left: 0; right: 0;
+  top: 50%;
+  margin: 0 auto;
+  display:block;
 }
 
 .item-4 {
@@ -98,9 +101,54 @@ h2 {
 .item-9 {
 
 }
+iframe {
+  
+}
+.return-top{
+    width:100px;
+    height:100px;
+    font:bold 50px/100px "宋体";
+    color:#fff;
+    background-color:purple;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    cursor:pointer;
+    display:none;
+}
+.return-top.active{
+    display:block;
+}
 </style>
 
-<body>
+<body id = "league">
+  <div class="return-top" id="return_top">▲</div>
+    <script>
+      
+        var return_top = document.getElementById("return_top");
+        var sTop;
+        window.onscroll = function(){
+            sTop = document.body.scrollTop||document.documentElement.scrollTop;
+            if(sTop> document.body.scrollHeight*0.25){
+                return_top.className = "return-top active";
+            }else{
+                return_top.className = "return-top";
+            }
+        }
+
+        return_top.onclick = function(){
+            var termId = setInterval(function(){
+                sTop-=50;
+                if(sTop<=0){
+
+                    clearInterval(termId);
+                }
+                window.scrollTo(0,sTop);
+
+            },1);       
+        }
+    </script>
     <div class="wrapper" style="background-color:bisque;">
             <!-- content -->
         <div style="width:100%; height:100%;background-color:#FFA400"></div>
@@ -108,21 +156,25 @@ h2 {
         <div id="header" style="background-color:rgb(243, 199, 163);">
             <h2 style="margin-bottom:0;"><img src= "League of legends.png" width="4%">My League of Legend</h2>
         </div>
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
-            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
-            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
-        </ul>
+        <div id = "menu">
+          <ul>
+              <li class="index" ><a href="index.html">Home</a></li> 
+              <li class="league" ><a href="league.html">My League</a></li>
+              <li class="MHW" ><a href="MHW.html">My MHW</a></li>
+              <li class="Overwatch" ><a href="Overwatch.html">My Overwatch</a></li>
+          </ul>   
+        </div> 
         <div id="container">
             <div class="item item-1" style="background-color:bisque;font-family:cursive;" >
-                    <b>A Little About Me In League of Legend</b>
-                    <br>
-                        <br>
-                        I am a main supp player, but I can carry in other positions too.<br>
-                        I engjoy playing supp because I think it is fun to cc bunch of enemys and my teamates follow up, like in the video<br>
-                        I am the Rakan in the video.<br>
-                        I recorded the video because I think the scene is beautiful lol.<br>
+              <div style="height:100%">   
+                <b>A Little About Me In League of Legend</b>
+                <br>
+                <br>
+                I am a main supp player, but I can carry in other positions too.<br>
+                I engjoy playing supp because I think it is fun to cc bunch of enemys and my teamates follow up, like in the video<br>
+                I am the Rakan in the video.<br>
+                I recorded the video because I think the scene is beautiful lol.<br>
+              </div> 
             </div>
             <div class="item item-2" style="background-color:bisque;font-family:cursive;">
                 <b>A Little About My Favorite Player: The Shy</b>
@@ -133,14 +185,11 @@ h2 {
                     He is known to be the best player without a doubt nowadays.<br>
                     Here is a video about him~<br>
             </div>
-            <div class="item item-3"><iframe width="560" height="315" src="https://www.youtube.com/embed/e9V65_mAarw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            <div class="item item-4"><iframe width="560" height="315" src="https://www.youtube.com/embed/Y1GvvnmAHJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="item item-3" style = "background-color:purple"><iframe width="80%" height="315" src="https://www.youtube.com/embed/e9V65_mAarw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="item item-4"><iframe width="80%" height="315" src="https://www.youtube.com/embed/Y1GvvnmAHJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             
         </div>
     </div>
-<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
-    By Frank Zhang 
-</div>
 <div></div>
 </body>
 </html>

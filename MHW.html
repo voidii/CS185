@@ -41,6 +41,10 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+#MHW #menu .MHW {
+    background-color: bisque;
+    color: white;
+}
 h2 {
     font-family: cursive;
     font-size: 30px;
@@ -48,16 +52,15 @@ h2 {
 }
 #container{
   display: grid;
-  padding: 50px;
   grid-row-gap: 50px;
   font-size: 30px;
-  grid-template-columns: 0.25fr 1fr; 
+  grid-template-columns: minmax(20px, 0.25fr) 1fr; 
   grid-auto-flow: row dense;
 }
 
 .item {
   text-align: center;
-
+    
 }
 
 .item-1 {
@@ -96,23 +99,65 @@ h2 {
 .item-9 {
 
 }
+.return-top{
+    width:100px;
+    height:100px;
+    font:bold 50px/100px "宋体";
+    color:#fff;
+    background-color:purple;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    cursor:pointer;
+    display:none;
+}
+.return-top.active{
+    display:block;
+}
 </style>
+<body id = "MHW">
+    <div class="return-top" id="return_top">▲</div>
+    <script>
+        var return_top = document.getElementById("return_top");
+        var sTop;
+        window.onscroll = function(){
+            sTop = document.body.scrollTop||document.documentElement.scrollTop;
+            if(sTop> document.body.scrollHeight*0.25){
+                return_top.className = "return-top active";
+            }else{
+                return_top.className = "return-top";
+            }
+        }
 
-<body>
+        return_top.onclick = function(){
+            var termId = setInterval(function(){
+                sTop-=50;
+                if(sTop<=0){
+
+                    clearInterval(termId);
+                }
+                window.scrollTo(0,sTop);
+
+            },1);       
+        }
+    </script>
     <div class="wrapper" style="background-color:bisque;">
             <!-- content -->
         <div style="width:100%; height:100%;background-color:#FFA400"></div>
 
-        <div id="header" style="background-color:rgb(243, 199, 163);">
+        <div id="header" style="background-color:rgb(243, 199, 163);width:100%">
             <h2 style="margin-bottom:0;"><img src= "MHW.png" width="4%">My Monster Hunter World</h2>
         </div>
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
-            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
-            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
-        </ul>
-        <div id="container">
+        <div id = "menu">
+            <ul>
+                <li class="index" ><a href="index.html">Home</a></li> 
+                <li class="league" ><a href="league.html">My League</a></li>
+                <li class="MHW" ><a href="MHW.html">My MHW</a></li>
+                <li class="Overwatch" ><a href="Overwatch.html">My Overwatch</a></li>
+            </ul>   
+            </div> 
+        <div id="container" style = "width:100%;">
             <div class="item item-1" style="background-color:bisque;font-family:cursive;">
                 <b>A Little About The Monsters In The Hunter World</b>
             </div>
@@ -164,9 +209,6 @@ h2 {
             </div>
           </div>
     </div>
-<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
-    By Frank Zhang 
-</div>
 <div></div>
 </body>
 </html>

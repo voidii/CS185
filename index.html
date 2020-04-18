@@ -41,14 +41,59 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+#index #menu .index {
+    background-color: bisque;
+    color: white;
+}
 h2 {
     font-family: cursive;
     font-size: 30px;
     color: rgb(0, 0, 0);
 }
+.return-top{
+    width:100px;
+    height:100px;
+    font:bold 50px/100px "宋体";
+    color:#fff;
+    background-color:purple;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    cursor:pointer;
+    display:none;
+}
+.return-top.active{
+    display:block;
+}
 </style>
 
-<body>
+<body id = "index">
+    <div class="return-top" id="return_top">▲</div>
+    <script>
+        var return_top = document.getElementById("return_top");
+        var sTop;
+        window.onscroll = function(){
+            sTop = document.body.scrollTop||document.documentElement.scrollTop;
+            if(sTop> document.body.scrollHeight*0.25){
+                return_top.className = "return-top active";
+            }else{
+                return_top.className = "return-top";
+            }
+        }
+
+        return_top.onclick = function(){
+            var termId = setInterval(function(){
+                sTop-=50;
+                if(sTop<=0){
+
+                    clearInterval(termId);
+                }
+                window.scrollTo(0,sTop);
+
+            },1);       
+        }
+    </script>
     <div class="wrapper" style="background-color:bisque;">
             <!-- content -->
         <div id="container" style="width:100%; height:100%;background-color:#FFA400"></div>
@@ -56,12 +101,14 @@ h2 {
         <div id="header" style="background-color:rgb(243, 199, 163);">
             <h2 style="margin-bottom:0;">CS180 Web Page</h2>
         </div>
-        <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
-            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
-            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
-        </ul>
+        <div id = "menu">
+            <ul>
+                <li class="index" ><a href="index.html">Home</a></li> 
+                <li class="league" ><a href="league.html">My League</a></li>
+                <li class="MHW" ><a href="MHW.html">My MHW</a></li>
+                <li class="Overwatch" ><a href="Overwatch.html">My Overwatch</a></li>
+            </ul>   
+          </div> 
         <div id="content" style="background-color:bisque;height:100%;width:25%;float:right;font-family:cursive;">
             <b>A Little About Me</b>
             <br>
@@ -75,9 +122,6 @@ h2 {
             <img src="Image.jpg" width="100%" alt="image" />
         </div>
     </div>
-<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
-    By Frank Zhang 
-</div>
 <div></div>
 </body>
 </html>

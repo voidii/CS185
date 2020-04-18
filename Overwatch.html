@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head> 
 <meta charset="utf-8"> 
@@ -15,9 +14,6 @@ html,body{
 .wrapper {
   min-height: 100%;  
   margin-bottom: -50px; /* 等于footer的高度 */
-}
-.footer, .push {
-  height: 50px;
 }
 ul {
   list-style-type: none;
@@ -41,6 +37,10 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+#Overwatch #menu .Overwatch {
+    background-color: bisque;
+    color: white;
+}
 h2 {
     font-family: cursive;
     font-size: 30px;
@@ -49,77 +49,214 @@ h2 {
 .parent
 {
     background-color:bisque;    
-    padding: 50px;
+    width: 100%;
+    height: 300px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 10px;
 
 }
 .child{
-    background-color:bisque; 
-    min-height: 100px;
-    width: 500px;
-    border: black;
+    
 }
-.child-1{
-
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.child-2{
-    grid-row: span 2;
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    display: block;
+    margin: auto;
+    height: 80%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+.return-top{
+    width:100px;
+    height:100px;
+    font:bold 50px/100px "宋体";
+    color:#fff;
+    background-color:purple;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    cursor:pointer;
+    display:none;
+}
+.return-top.active{
+    display:block;
 }
 </style>
+</head>
 
-<body>
+<body id = "Overwatch"  style="background-color:bisque;">
+    <div class="return-top" id="return_top">▲</div>
+    <script>
+        var return_top = document.getElementById("return_top");
+        var sTop;
+        window.onscroll = function(){
+            sTop = document.body.scrollTop||document.documentElement.scrollTop;
+            if(sTop> document.body.scrollHeight*0.25){
+                return_top.className = "return-top active";
+            }else{
+                return_top.className = "return-top";
+            }
+        }
+
+        return_top.onclick = function(){
+            var termId = setInterval(function(){
+                sTop-=50;
+                if(sTop<=0){
+
+                    clearInterval(termId);
+                }
+                window.scrollTo(0,sTop);
+
+            },1);       
+        }
+    </script>
     <div class="wrapper" style="background-color:bisque;">
-            <!-- content -->
-        <div id="container" style="width:100%; height:100%;background-color:#FFA400"></div>
-
         <div id="header" style="background-color:rgb(243, 199, 163);">
             <h2 style="margin-bottom:0;"><img src= "overwatch.png" width="4%">My Overwatch</h2>
         </div>
+        <div id = "menu">
         <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="league.html"><img src= "League of legends.png" width="4%">My League</a></li>
-            <li><a href="MHW.html"><img src= "MHW.png" width="4%">My MHW</a></li>
-            <li><a href="Overwatch.html"><img src= "overwatch.png" width="5%">My Overwatch</a></li>
-        </ul>           
+            <li class="index" ><a href="index.html">Home</a></li> 
+            <li class="league" ><a href="league.html">My League</a></li>
+            <li class="MHW" ><a href="MHW.html">My MHW</a></li>
+            <li class="Overwatch" ><a href="Overwatch.html">My Overwatch</a></li>
+        </ul>   
+        </div>    
         <div class="parent">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <div class = "child child-1">
-                <img src="w1.png"  float = "center" width = "50%">
-            </div>
-            <div class = "child child-1">
-                <img src="w2.png"  width = "50%">
+                <img class = "myImg" src="w1.png" alt = "overwatch" float = "center" width = "50%">
             </div>
             <div class = "child child-1">
-                <img src="w3.png"  width = "70%">
+                <img class = "myImg" src="w2.png" alt = "overwatch" width = "50%">
+            </div>
+            <div class = "child child-1">
+                <img class = "myImg" src="w3.png" alt = "overwatch" width = "70%">
             </div>
             <div class = "child child-2">
-                <img src="w4.png"  width = "100%">
+                <img class = "myImg" src="w4.png" alt = "overwatch" width = "100%">
             </div>
             <div class = "child child-2">
-                <img src="w5.png"  width = "80%">
+                <img class = "myImg" src="w5.png" alt = "overwatch" width = "80%">
             </div>
             <div class = "child child-2">
-                <img src="w6.png"  width = "80%">
+                <img class = "myImg" src="w6.png" alt = "overwatch" width = "80%">
             </div>
             <div class = "child child-2">
-                <img src="w7.png"  width = "80%">
+                <img class = "myImg" src="w7.png" alt = "overwatch" width = "80%">
             </div>
             <div class = "child child-2">
-                <img src="w8.png"  width = "100%">
+                <img class = "myImg" src="w8.png" alt = "overwatch" width = "100%">
             </div>
             <div class = "child child-2">
-                <img src="w9.png"  width = "100%">
+                <img class = "myImg" src="w9.png" alt = "overwatch" width = "100%">
             </div>
-
-            
+            <div id="myModal" class="modal">
+                <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+            <script>
+                var modal = document.getElementById('myModal');
+                var img = $('.myImg');
+                var modalImg = $("#img01");
+                var captionText = document.getElementById("caption");
+                $('.myImg').click(function(){
+                    modal.style.display = "block";
+                    var newSrc = this.src;
+                    modalImg.attr('src', newSrc);
+                    captionText.innerHTML = this.alt;
+                });
+                var span = document.getElementsByClassName("close")[0];
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+            </script>
         </div>
-        
     </div>
-<div id="footer" style="background-color:bisque;clear:both;text-align:left;">
-    By Frank Zhang 
 </div>
-<div></div>
 </body>
 </html>

@@ -59,6 +59,7 @@ h2 {
 
 .item {
   text-align: center;
+  align-items:center;
 }
 
 .item-1 {
@@ -72,14 +73,16 @@ h2 {
 }
 
 .item-3 {
-  left: 0; right: 0;
-  top: 50%;
-  margin: 0 auto;
-  display:block;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .item-4 {
-
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .item-5 {
@@ -185,7 +188,7 @@ iframe {
                     He is known to be the best player without a doubt nowadays.<br>
                     Here is a video about him~<br>
             </div>
-            <div class="item item-3" style = "background-color:purple"><iframe width="80%" height="315" src="https://www.youtube.com/embed/e9V65_mAarw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="item item-3"><iframe width="80%" height="315" src="https://www.youtube.com/embed/e9V65_mAarw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="item item-4"><iframe width="80%" height="315" src="https://www.youtube.com/embed/Y1GvvnmAHJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             
         </div>

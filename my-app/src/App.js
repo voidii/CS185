@@ -4,7 +4,10 @@ import Tablist from './Comp/Tablist'
 import Body from './Comp/body'
 import TopJumper from './Comp/TopJumper'
 
+
+
 class App extends Component {
+
   constructor(){
     super();
     this.state = {
@@ -33,6 +36,10 @@ class App extends Component {
       {
         id: 4,
         title: 'My MHW'
+      },
+      {
+        id: 5,
+        title: 'My Comments'
       }
     ]
     return (
